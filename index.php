@@ -38,13 +38,13 @@
 
 				#buscamos carpetas internas por cada directorio
 				$internas = glob($value."/*" , GLOB_ONLYDIR);
-				echo "<ul>";
+				echo "<blockquote><ul>";
 				for ($i=0; $i < sizeof($internas); $i++) { 
 					#limpiamos arreglo
 					$url_name=explode("/", $internas[$i]);
 					echo "<li><a href='".$internas[$i]."'>".$url_name[3]."</a></li>";
 				}
-				echo "</ul></section>";
+				echo "</ul></blockquote></section>";
 			}
 			?>
 			</div>
@@ -57,6 +57,24 @@
 			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				history: true,
+				
+				// Enables touch navigation on devices with touch input
+    			touch: true,
+    			
+    			// Enable slide navigation via mouse wheel
+   				mouseWheel: true,
+
+   				// Transition style
+    			transition: 'convex', // default/none/fade/slide/convex/concave/zoom
+
+    			// Parallax background image
+    			parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+    			// Parallax background size
+    			parallaxBackgroundSize: '2100px 900px', // CSS syntax, e.g. "2100px 900px"
+
+
+
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
